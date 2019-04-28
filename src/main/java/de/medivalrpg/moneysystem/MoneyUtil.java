@@ -33,4 +33,10 @@ public class MoneyUtil {
         return 0;
     }
 
+    public void givePlayerMoney(Player player, int amount) {
+        if(player != null){
+
+        }
+    }
+
 }
