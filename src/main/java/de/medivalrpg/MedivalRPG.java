@@ -6,11 +6,12 @@ public class MedivalRPG extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        System.out.println("HALLO");
     }
 
     @Override
     public void onDisable() {
+        System.out.println("BYE");
 
     }
 
