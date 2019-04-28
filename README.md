@@ -1,5 +1,7 @@
 # MedivalRPG
 
+This is a Medival RPG System. To use on Servers
+
 ## Systems
 
 ```
