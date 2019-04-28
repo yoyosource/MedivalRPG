@@ -33,7 +33,6 @@ public class MedivalRPG extends JavaPlugin {
     public void onDisable() {
         System.out.println("BYE");
         System.out.println("lol");
-
     }
 
 }
