@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class MoneyUtil {
 
-    public void getMoneyFromPlayerInventory(Player player) {
+    public int getMoneyFromPlayerInventory(Player player) {
         if (player != null) {
             Inventory inventory = player.getInventory();
             ItemStack[] itemStacks = inventory.getContents();
@@ -28,7 +28,9 @@ public class MoneyUtil {
                     }
                 }
             }
+            return playerMoney;
         }
+        return 0;
     }
 
 }
