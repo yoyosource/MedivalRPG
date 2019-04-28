@@ -1,9 +1,7 @@
 package de.medivalrpg.moneysystem;
 
-public class MoneyUtil {
+import de.medivalrpg.Initializer;
 
-    public void MoneyUtil() {
-
-    }
+public class MoneyUtil extends Initializer {
 
 }

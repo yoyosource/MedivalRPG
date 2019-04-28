@@ -4,8 +4,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MedivalRPG extends JavaPlugin {
 
+    private Initializer initializer;
+
     @Override
     public void onEnable() {
+
+        this.initializer = new Initializer();
+
         System.out.println("");
         System.out.println("");
         System.out.println("");

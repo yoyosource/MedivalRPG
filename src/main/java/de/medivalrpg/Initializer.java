@@ -2,10 +2,12 @@ package de.medivalrpg;
 
 public class Initializer {
 
-    private void initialize() {
-
+    private Object Initialize() {
+        return Initialize();
     }
 
-    public
+    public Object getInitialize() {
+        return Initialize();
+    }
 
 }
