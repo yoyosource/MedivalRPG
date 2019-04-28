@@ -13,10 +13,10 @@ public class MoneySystem {
     }
 
     public void initialize() {
-        moneyUtil.test();
         //TODO register
     }
 
-
-
+    public MoneyUtil getMoneyUtil() {
+        return moneyUtil;
+    }
 }

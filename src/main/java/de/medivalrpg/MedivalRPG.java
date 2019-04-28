@@ -12,21 +12,17 @@ public class MedivalRPG extends JavaPlugin {
     private MoneySystem moneySystem;
     private DrinkSystem drinkSystem;
 
-    private Initializer initializer;
-
     @Override
     public void onEnable() {
         //Initialize instance of class
         this.plugin = this;
 
-        //Initialize System object
+        //Initialize System objects
         this.moneySystem = new MoneySystem(plugin);
         this.drinkSystem = new DrinkSystem(plugin);
 
         moneySystem.initialize();
         drinkSystem.initialize();
-
-        this.initializer = new Initializer(this.plugin);
 
         System.out.println("");
         System.out.println("");
@@ -57,5 +53,8 @@ public class MedivalRPG extends JavaPlugin {
         System.out.println("lol");
     }
 
+    public MoneySystem getMoneySystem() {
+        return moneySystem;
+    }
 }
 
