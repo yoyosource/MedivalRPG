@@ -1,6 +1,7 @@
 package de.medivalrpg;
 
 import de.medivalrpg.drinks.DrinkSystem;
+import de.medivalrpg.intromessages.IntroMessages;
 import de.medivalrpg.moneysystem.MoneySystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -13,6 +14,7 @@ public class MedivalRPG extends JavaPlugin {
     //System objects
     private MoneySystem moneySystem;
     private DrinkSystem drinkSystem;
+    private IntroMessages introMessages;
 
     @Override
     public void onEnable() {
@@ -22,26 +24,24 @@ public class MedivalRPG extends JavaPlugin {
         //Initialize System objects
         this.moneySystem = new MoneySystem(plugin);
         this.drinkSystem = new DrinkSystem(plugin);
+        this.introMessages = new IntroMessages(plugin);
 
         moneySystem.initialize();
         drinkSystem.initialize();
+        introMessages.initialize();
 
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"Starting RPG-System....");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+" ________  ________  ________  ________       ___    ___ ________      \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"|\\   __  \\|\\   __  \\|\\   ____\\|\\   ____\\     |\\  \\  /  /|\\   ____\\     \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\___|\\ \\  \\___|_    \\ \\  \\/  / | \\  \\___|_    \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+" \\ \\   _  _\\ \\   ____\\ \\  \\  __\\ \\_____  \\    \\ \\    / / \\ \\_____  \\   \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"  \\ \\  \\\\  \\\\ \\  \\___|\\ \\  \\|\\  \\|____|\\  \\    \\/  /  /   \\|____|\\  \\  \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"   \\ \\__\\\\ _\\\\ \\__\\    \\ \\_______\\____\\_\\  \\ __/  / /       ____\\_\\  \\ \n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"    \\|__|\\|__|\\|__|     \\|_______|\\_________\\\\___/ /       |\\_________\\\n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"                                 \\|_________\\|___|/        \\|_________|\n");
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"                                                                       ");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+"Starting RPG-System....");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+" __     __     ______     ______     ______   ______     ______     __  __     ______    ");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+"/\\ \\  _ \\ \\   /\\___  \\   /\\  == \\   /\\  == \\ /\\  ___\\   /\\  ___\\   /\\ \\_\\ \\   /\\  ___\\   ");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+"\\ \\ \\/ \".\\ \\  \\/_/  /__  \\ \\  __<   \\ \\  _-/ \\ \\ \\__ \\  \\ \\___  \\  \\ \\____ \\  \\ \\___  \\  ");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+" \\ \\__/\".~\\_\\   /\\_____\\  \\ \\_\\ \\_\\  \\ \\_\\    \\ \\_____\\  \\/\\_____\\  \\/\\_____\\  \\/\\_____\\ ");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+"  \\/_/   \\/_/   \\/_____/   \\/_/ /_/   \\/_/     \\/_____/   \\/_____/   \\/_____/   \\/_____/ \n");
 
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getServer().broadcastMessage(ChatColor.RED+"Stopping RPG_System...");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.RED+"Stopping RPG_System...");
     }
 
     public MoneySystem getMoneySystem() {
