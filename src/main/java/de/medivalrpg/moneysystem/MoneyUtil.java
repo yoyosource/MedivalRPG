@@ -1,8 +1,11 @@
 package de.medivalrpg.moneysystem;
 
+import net.minecraft.server.v1_12_R1.Item;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class MoneyUtil {
 
@@ -34,6 +37,36 @@ public class MoneyUtil {
         return 0;
     }
 
+    private ItemStack goldBlockItem() {
+
+        goldBlockItem().setType(Material.GOLD_BLOCK);
+        ItemMeta itemMeta = goldBlockItem().getItemMeta();
+        itemMeta.setDisplayName(""); //TODO AZRA name
+        goldBlockItem().setItemMeta(itemMeta);
+
+        return goldBlockItem();
+    }
+
+    private ItemStack goldIngotItem() {
+
+        goldIngotItem().setType(Material.GOLD_INGOT);
+        ItemMeta itemMeta = goldIngotItem().getItemMeta();
+        itemMeta.setDisplayName(""); //TODO AZRA name
+        goldIngotItem().setItemMeta(itemMeta);
+
+        return goldIngotItem();
+    }
+
+    private ItemStack goldNuggetItem() {
+
+        goldNuggetItem().setType(Material.GOLD_NUGGET);
+        ItemMeta itemMeta = goldNuggetItem().getItemMeta();
+        itemMeta.setDisplayName(""); //TODO AZRA name
+        goldNuggetItem().setItemMeta(itemMeta);
+
+        return goldNuggetItem();
+    }
+
     public void givePlayerMoney(Player player, int amount, PayOption payOptions) {
         if (player != null) {
             Inventory inventory = player.getInventory();
@@ -41,19 +74,34 @@ public class MoneyUtil {
                 case ALL:
                     while (amount > 0) {
                         if (amount >= 81) {
-                            inventory.addItem();
+                            inventory.addItem(goldBlockItem());
+                            amount -= 81;
                         } else if (amount >= 9) {
-
+                            inventory.addItem(goldIngotItem());
+                            amount -= 9;
                         } else {
-
+                            inventory.addItem(goldNuggetItem());
+                            amount--;
                         }
                     }
                     break;
                 case ONLY_BLOCKS:
+                    while (amount >= 81) {
+                        inventory.addItem(goldBlockItem());
+                        amount -= 81;
+                    }
                     break;
                 case ONLY_INGOTS:
+                    while (amount >= 9) {
+                        inventory.addItem(goldIngotItem());
+                        amount -= 9;
+                    }
                     break;
                 case ONLY_NUGGETS:
+                    while (amount >= 1) {
+                        inventory.addItem(goldNuggetItem());
+                        amount--;
+                    }
                     break;
                 default:
                     break;
