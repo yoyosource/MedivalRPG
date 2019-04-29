@@ -12,30 +12,52 @@ public class MoneyUtil {
             ItemStack[] itemStacks = inventory.getContents();
             int playerMoney = 0;
             for (ItemStack itemStack : itemStacks) {
-                if (itemStack != null) {
-                    switch (itemStack.getType()) {
-                        case GOLD_NUGGET:
-                            playerMoney++;
-                            break;
-                        case GOLD_INGOT:
-                            playerMoney += 9;
-                            break;
-                        case GOLD_BLOCK:
-                            playerMoney += 81;
-                            break;
-                        default:
-                            break;
+                if (itemStack.getType() != null)
+                    if (itemStack != null) {
+                        switch (itemStack.getType()) {
+                            case GOLD_NUGGET:
+                                playerMoney++;
+                                break;
+                            case GOLD_INGOT:
+                                playerMoney += 9;
+                                break;
+                            case GOLD_BLOCK:
+                                playerMoney += 81;
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
             }
             return playerMoney;
         }
         return 0;
     }
 
-    public void givePlayerMoney(Player player, int amount) {
-        if(player != null){
+    public void givePlayerMoney(Player player, int amount, PayOption payOptions) {
+        if (player != null) {
+            Inventory inventory = player.getInventory();
+            switch (payOptions) {
+                case ALL:
+                    while (amount > 0) {
+                        if (amount >= 81) {
+                            inventory.addItem();
+                        } else if (amount >= 9) {
 
+                        } else {
+
+                        }
+                    }
+                    break;
+                case ONLY_BLOCKS:
+                    break;
+                case ONLY_INGOTS:
+                    break;
+                case ONLY_NUGGETS:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
