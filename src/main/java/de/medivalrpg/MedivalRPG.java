@@ -1,6 +1,7 @@
 package de.medivalrpg;
 
 import de.medivalrpg.drinks.DrinkSystem;
+import de.medivalrpg.intromessages.IntroMessages;
 import de.medivalrpg.moneysystem.MoneySystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -13,6 +14,7 @@ public class MedivalRPG extends JavaPlugin {
     //System objects
     private MoneySystem moneySystem;
     private DrinkSystem drinkSystem;
+    private IntroMessages introMessages;
 
     @Override
     public void onEnable() {
@@ -22,9 +24,11 @@ public class MedivalRPG extends JavaPlugin {
         //Initialize System objects
         this.moneySystem = new MoneySystem(plugin);
         this.drinkSystem = new DrinkSystem(plugin);
+        this.introMessages = new IntroMessages(plugin);
 
         moneySystem.initialize();
         drinkSystem.initialize();
+        introMessages.initialize();
 
         Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+"Starting RPG-System....");
         Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA+" __     __     ______     ______     ______   ______     ______     __  __     ______    ");
