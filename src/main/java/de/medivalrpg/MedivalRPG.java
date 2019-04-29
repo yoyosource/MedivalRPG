@@ -2,6 +2,8 @@ package de.medivalrpg;
 
 import de.medivalrpg.drinks.DrinkSystem;
 import de.medivalrpg.moneysystem.MoneySystem;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MedivalRPG extends JavaPlugin {
@@ -24,27 +26,17 @@ public class MedivalRPG extends JavaPlugin {
         moneySystem.initialize();
         drinkSystem.initialize();
 
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"Starting RPG-System....");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+" ________  ________  ________  ________       ___    ___ ________      \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"|\\   __  \\|\\   __  \\|\\   ____\\|\\   ____\\     |\\  \\  /  /|\\   ____\\     \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\___|\\ \\  \\___|_    \\ \\  \\/  / | \\  \\___|_    \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+" \\ \\   _  _\\ \\   ____\\ \\  \\  __\\ \\_____  \\    \\ \\    / / \\ \\_____  \\   \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"  \\ \\  \\\\  \\\\ \\  \\___|\\ \\  \\|\\  \\|____|\\  \\    \\/  /  /   \\|____|\\  \\  \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"   \\ \\__\\\\ _\\\\ \\__\\    \\ \\_______\\____\\_\\  \\ __/  / /       ____\\_\\  \\ \n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"    \\|__|\\|__|\\|__|     \\|_______|\\_________\\\\___/ /       |\\_________\\\n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"                                 \\|_________\\|___|/        \\|_________|\n");
+        Bukkit.getServer().broadcastMessage(ChatColor.AQUA+"                                                                       ");
+
     }
 
     @Override
