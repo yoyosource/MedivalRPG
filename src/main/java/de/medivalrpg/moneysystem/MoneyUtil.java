@@ -103,6 +103,8 @@ public class MoneyUtil {
                         amount--;
                     }
                     break;
+                case NONE:
+                    break;
                 default:
                     break;
             }
