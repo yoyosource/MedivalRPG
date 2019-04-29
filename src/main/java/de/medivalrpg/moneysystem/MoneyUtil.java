@@ -72,7 +72,7 @@ public class MoneyUtil {
             Inventory inventory = player.getInventory();
             switch (payOptions) {
                 case ALL:
-                    while (amount > 0) {
+                    while (amount >= 1) {
                         if (amount >= 81) {
                             inventory.addItem(goldBlockItem());
                             amount -= 81;
@@ -101,6 +101,39 @@ public class MoneyUtil {
                     while (amount >= 1) {
                         inventory.addItem(goldNuggetItem());
                         amount--;
+                    }
+                    break;
+                case ONLY_BLOCKS_AND_INGOTS:
+                    while (amount >= 9) {
+                        if (amount >= 81) {
+                            inventory.addItem(goldBlockItem());
+                            amount -= 81;
+                        } else if (amount >= 9) {
+                            inventory.addItem(goldIngotItem());
+                            amount -= 9;
+                        }
+                    }
+                    break;
+                case ONLY_BLOCKS_AND_NUGGETS:
+                    while (amount >= 1) {
+                        if (amount >= 81) {
+                            inventory.addItem(goldBlockItem());
+                            amount -= 81;
+                        } else {
+                            inventory.addItem(goldNuggetItem());
+                            amount--;
+                        }
+                    }
+                    break;
+                case ONLY_INGOTS_AND_NUGGETS:
+                    while (amount >= 1) {
+                        if (amount >= 9) {
+                            inventory.addItem(goldIngotItem());
+                            amount -= 9;
+                        } else {
+                            inventory.addItem(goldNuggetItem());
+                            amount--;
+                        }
                     }
                     break;
                 case NONE:
