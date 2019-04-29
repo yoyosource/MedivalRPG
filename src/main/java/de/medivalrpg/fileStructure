@@ -5,8 +5,8 @@ Other Directory
 
 ~/<FEATURE>/<ListenerORSo>/<DATEI>
 
-~/<FEATURE>/Initialize.class
-- Method to initialize the Feature;
-- Name of File should be Initialize.
-- One Method named Initialize
-- Mehtod should be Static!
+~/<FEATURE>/<FEATURE>System.class
+- Method to initialize the Features.
+- Name of File should be System.
+- One Method named initialize.
+- Mehtod should be private!
