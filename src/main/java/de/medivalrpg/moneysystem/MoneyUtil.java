@@ -136,8 +136,6 @@ public class MoneyUtil {
                         }
                     }
                     break;
-                case NONE:
-                    break;
                 default:
                     break;
             }
